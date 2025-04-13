@@ -1,0 +1,17 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Metadata
+/dev/block/by-name/metadata /metadata ext4 nodev,noatime,nosuid,discard,data=journal,commit=1 wait,check,formattable,first_stage_mount,metadata_csum
+
+# System
+/dev/block/by-name/system /system ext4 noatime,ro first_stage_mount,wait
+
+# Userdata
+/dev/block/by-name/userdata /data ext4 nodev,noatime,nosuid, latemount,wait,check,quota,formattable
+/dev/block/by-name/userdata /data f2fs nodev,noatime,nosuid,reserve_root=32768 latemount,wait,check,quota,formattable
+
+# Vendor
+/dev/block/by-name/vendor /vendor ext4 noatime,ro first_stage_mount,wait
