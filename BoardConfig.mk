@@ -37,8 +37,14 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Kernel
-BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_BOOTS_16K := true
+
+ifneq ($(wildcard device/apple/snowcastle-kernel/Image.gz-dtb),)
+$(warning Using prebuilt kernel)
+TARGET_PREBUILT_KERNEL := device/apple/snowcastle-kernel/Image.gz-dtb
+else
+$(warning Using source-built kernel)
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_SOURCE := kernel/apple
 
 TARGET_KERNEL_CONFIG := \
@@ -54,6 +60,7 @@ TARGET_KERNEL_CONFIG_EXT := \
     kernel/mainline/configs/fragments/n/disable-clang-hardening-features.config \
     kernel/mainline/configs/fragments/n/faster-build-time.config \
     $(DEVICE_PATH)/kconfigs/iphone.config
+endif
 
 # OTA
 TARGET_SKIP_OTA_PACKAGE := true
