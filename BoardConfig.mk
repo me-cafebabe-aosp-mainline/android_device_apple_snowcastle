@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-USES_DEVICE_APPLE_IPHONE := true
+USES_DEVICE_APPLE_SNOWCASTLE := true
 
 # Inherit from mainline/common
 include device/mainline/common/BoardConfigMainlineCommon.mk
@@ -22,7 +22,7 @@ TARGET_CPU_VARIANT := generic
 BOARD_KERNEL_CMDLINE := \
     $(MAINLINE_COMMON_ANDROIDBOOT_PARAMS) \
     $(MAINLINE_COMMON_KERNEL_PARAMS) \
-    androidboot.hardware=iphone \
+    androidboot.hardware=snowcastle \
     androidboot.verifiedbootstate=orange \
     console=tty0
 
@@ -71,11 +71,11 @@ BOARD_USES_METADATA_PARTITION := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Platform
-TARGET_BOARD_PLATFORM := iphone
+TARGET_BOARD_PLATFORM := snowcastle
 
 # Recovery
 TARGET_RECOVERY_DENSITY := xxhdpi
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/configs/fstab.iphone
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/configs/fstab.snowcastle
 
 # VINTF
 DEVICE_MANIFEST_FILE := \

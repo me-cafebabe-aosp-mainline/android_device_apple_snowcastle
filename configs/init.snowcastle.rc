@@ -8,8 +8,8 @@ import /vendor/etc/init/hw/init.mainline.rc
 # Mount
 on fs
     # Mount everything that does not require fsck
-    mount_all /vendor/etc/fstab.iphone --early
+    mount_all /vendor/etc/fstab.snowcastle --early
 
 on late-fs
     # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.iphone --late
+    mount_all /vendor/etc/fstab.snowcastle --late

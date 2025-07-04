@@ -11,10 +11,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
 
 # Inherit from device
-$(call inherit-product, device/apple/iPhone/device.mk)
+$(call inherit-product, device/apple/snowcastle/device.mk)
 
-PRODUCT_NAME := lineage_iPhone
-PRODUCT_DEVICE := iPhone
+PRODUCT_NAME := lineage_snowcastle
+PRODUCT_DEVICE := snowcastle
 PRODUCT_BRAND := Apple
 PRODUCT_MANUFACTURER := Apple
-PRODUCT_MODEL := iPhone
+PRODUCT_MODEL := snowcastle

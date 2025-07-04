@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/apple/iPhone
+DEVICE_PATH := device/apple/snowcastle
 
 # Inherit from mainline/common
 TARGET_INITIAL_BRINGUP := true
@@ -24,8 +24,8 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/fstab.iphone:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.iphone \
-    $(DEVICE_PATH)/configs/init.iphone.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.iphone.rc
+    $(DEVICE_PATH)/configs/fstab.snowcastle:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.snowcastle \
+    $(DEVICE_PATH)/configs/init.snowcastle.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.snowcastle.rc
 
 PRODUCT_PACKAGES += \
     use_memfd.rc
@@ -50,11 +50,11 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/fstab.iphone:$(TARGET_COPY_OUT_RAMDISK)/fstab.iphone
+    $(DEVICE_PATH)/configs/fstab.snowcastle:$(TARGET_COPY_OUT_RAMDISK)/fstab.snowcastle
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/init.recovery.iphone.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.iphone.rc
+    $(DEVICE_PATH)/configs/init.recovery.snowcastle.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.snowcastle.rc
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
