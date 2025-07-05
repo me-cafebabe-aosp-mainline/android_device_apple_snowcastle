@@ -23,6 +23,7 @@ BOARD_KERNEL_CMDLINE := \
     $(MAINLINE_COMMON_ANDROIDBOOT_PARAMS) \
     $(MAINLINE_COMMON_KERNEL_PARAMS) \
     androidboot.hardware=snowcastle \
+    androidboot.use_tmpfs_userdata=1 \
     androidboot.verifiedbootstate=orange \
     console=tty0
 

@@ -11,6 +11,3 @@ tmpfs /data tmpfs rw,size=1024M,nodev,noatime,nosuid latemount
 
 # Vendor
 /dev/block/loop1 /vendor ext4 noatime,ro first_stage_mount,wait
-
-cache    /cache      tmpfs   noatime,nosuid,nodev,rw   check
-metadata /metadata   tmpfs   noatime,nosuid,nodev,rw   check
