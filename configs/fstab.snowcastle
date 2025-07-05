@@ -3,11 +3,22 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# System
-/dev/block/loop0 /system ext4 noatime,ro first_stage_mount,wait
+# Base
+/dev/block/by-name/base /apfs apfs ro,vol=15 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=14 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=13 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=12 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=11 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=10 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=9 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=8 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=7 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=6 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=5 first_stage_mount
+/dev/block/by-name/base /apfs apfs ro,vol=4 first_stage_mount
 
-# Userdata
-tmpfs /data tmpfs rw,size=1024M,nodev,noatime,nosuid latemount
+# System
+/apfs/android/system.img /system ext4 noatime,ro first_stage_mount
 
 # Vendor
-/dev/block/loop1 /vendor ext4 noatime,ro first_stage_mount,wait
+/apfs/android/vendor.img /vendor ext4 noatime,ro first_stage_mount
