@@ -56,9 +56,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/init.recovery.snowcastle.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.snowcastle.rc
 
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/dummy:$(TARGET_COPY_OUT_ROOT)/apfs/dummy
-
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
