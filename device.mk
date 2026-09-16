@@ -15,12 +15,6 @@ SNOWCASTLE_USE_GENERIC_INIT := true
 endif
 
 # Inherit from mainline/common
-TARGET_ENABLE_FBKEYBOARD := true
-TARGET_GRAPHICS_ALLOCATOR_HAL := minigbm-upstream
-TARGET_GRAPHICS_COMPOSER_HAL := drmfb-composer
-TARGET_HEALTH_HAL := default-aidl
-TARGET_INITIAL_BRINGUP := true
-include device/mainline/common/optional/options.mk
 $(call inherit-product, device/mainline/common/mainline_common.mk)
 
 # APEX
@@ -50,6 +44,9 @@ else
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 endif
 
+# Debugging
+TARGET_ENABLE_FBKEYBOARD := true
+
 # Firmware
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/prebuilts/firmware/,$(TARGET_COPY_OUT_VENDOR)/firmware/)
@@ -63,7 +60,14 @@ PRODUCT_PACKAGES += \
     ipsw.recovery
 
 # Graphics allocator
+TARGET_GRAPHICS_ALLOCATOR_HAL := minigbm-upstream
 TARGET_MINIGBM_PLATFORM := generic
+
+# Graphics composer
+TARGET_GRAPHICS_COMPOSER_HAL := drmfb-composer
+
+# Health
+TARGET_HEALTH_HAL := default-aidl
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -130,6 +134,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     modprobe_kernel
+
+# Miscellaneous
+TARGET_INITIAL_BRINGUP := true
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
