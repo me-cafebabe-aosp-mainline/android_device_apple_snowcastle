@@ -80,6 +80,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     use_memfd.rc
 
+$(call soong_config_set_bool,generic_init,enabled,true)
 $(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):init_snowcastle)
 $(call soong_config_set,mainline_common_libinit,set_properties_from,devicetree)
 
