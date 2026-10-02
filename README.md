@@ -17,20 +17,19 @@ Due to the fact that the effort involves assistance from AI, the HoolockLinux de
 | Original | https://github.com/HoolockLinux | https://github.com/HoolockLinux/linux | https://github.com/HoolockLinux/m1n1 |
 | Pauli1Go | https://github.com/Pauli1Go?tab=repositories | https://github.com/Pauli1Go/HoolockLinux | https://github.com/Pauli1Go/m1n1 |
 
-## Kernel edits
-
-- After applying kernel patches specified below, on `mm/Kconfig`, on config option `MEMFD_ASHMEM_SHIM`, remove the dependency on `ASHMEM_C`.
-
 ## Kernel patches
 
-For recent Linux kernel versions:
+Apply the shared patches listed in
+`device/mainline/common/docs/KERNEL_PATCHES.md`.
+
+Device specific:
 
 | Commit name | Purpose | Source |
 |-------------|---------|--------|
-| `ANDROID: usb: gadget: configfs: Add Uevent to notify userspace` | Fixes USB in normal mode | https://android.googlesource.com/kernel/common-patches/+/refs/heads/main-kernel/android-mainline/ANDROID-usb-gadget-configfs-Add-Uevent-to-notify-userspace.patch |
-| `ANDROID: mm/memfd-ashmem-shim: Introduce shim layer` | Fixes graphics output via framebuffer | https://android.googlesource.com/kernel/common-patches/+/refs/heads/main-kernel/android-mainline/ANDROID-mm-memfd-ashmem-shim-Introduce-shim-layer.patch |
-| `ANDROID: mm: shmem: Use memfd-ashmem-shim ioctl handler"` | Fixes graphics output via framebuffer | https://android.googlesource.com/kernel/common-patches/+/refs/heads/main-kernel/android-mainline/ANDROID-mm-shmem-Use-memfd-ashmem-shim-ioctl-handler.patch |
 | `HACK: selinux: Force permissive when androidboot.selinux=permissive` | Guess :P | https://github.com/LineageOS/android_kernel_virt_virtio/commit/a723c1431987aec6e44f5ef20c9424a95727adf8 |
+
+The shim patches (see the shared page) are what makes graphics output via
+framebuffer work on this device.
 
 ## How-to
 
