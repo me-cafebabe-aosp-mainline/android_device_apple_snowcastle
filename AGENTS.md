@@ -18,7 +18,8 @@ commits.
 
 ## Hard rules
 
-- Do not build, flash or run tests; the human does and reports back.
+- No Android build, flashing or test without asking the human first
+  (`hardware/mainline/common/docs/WORKFLOW.md`).
 - Do not search from the AOSP tree root; use precise directories.
 - Keep device specific values here. Things that apply to more devices
   belong in the common trees (ask first).
